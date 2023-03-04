@@ -88,6 +88,7 @@ Rectangle {
         QGCToolBarButton {
             id:                 hybridViewButton
             icon.source:        "/res/engine.svg"
+            onClicked:          showCriticalVehicleMessage("bazinga")
         }
     }
 
