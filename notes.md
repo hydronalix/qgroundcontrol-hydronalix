@@ -6,6 +6,8 @@
 ## summarizing changes:
 
 * added a button with a cool svg icon i made lol
+    - made a textbox popup by modifying the `src/ui/toolbar/MainToolBar.qml` (see  c3f9159cfa7603d8c25b3d9789162bc355218740)
+    - currently there's no functionality in the cpp class or whatever I made...but the textbox meme is cool
 
 ## general notes:  
 
@@ -24,7 +26,7 @@ make: *** [QGroundControl.app/Contents/MacOS/QGroundControl] Error 254`
   
   
 `No rule to make target `QGroundControl'.  Stop.`
-
+delete build files
   
 
 
