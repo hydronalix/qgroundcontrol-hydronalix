@@ -8,6 +8,12 @@
 * added a button with a cool svg icon i made lol
     - made a textbox popup by modifying the `src/ui/toolbar/MainToolBar.qml` (see  c3f9159cfa7603d8c25b3d9789162bc355218740)
     - currently there's no functionality in the cpp class or whatever I made...but the textbox meme is cool
+* added another button with a terrible svg icon
+    - added `tdxactuatorcontroller.cpp`/`.h` to do udp stuff that normally i shid out in a python script
+    - extended the QGCTool class
+    - made `TdxActuatorController` objects in the `QGCToolbox` and `QGroundControlQmlGlobal` files
+    - *all that just to make it so that i could call `changeTdxState()` in `MainToolBar.qml` lmaaaoooooo*
+    - check the git log for evidence of this (bulk of work done 19 july)  
 
 ## general notes:  
 
