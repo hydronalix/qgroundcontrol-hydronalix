@@ -19,6 +19,7 @@
 #include "ADSBVehicleManager.h"
 #include "QGCPalette.h"
 #include "QmlUnitsConversion.h"
+#include "tdxactuatorcontroller.h"
 #if defined(QGC_ENABLE_PAIRING)
 #include "PairingManager.h"
 #endif
@@ -58,9 +59,10 @@ public:
     };
     Q_ENUM(AltMode)
 
-    Q_PROPERTY(QString              appName                 READ    appName                 CONSTANT)
-    Q_PROPERTY(LinkManager*         linkManager             READ    linkManager             CONSTANT)
-    Q_PROPERTY(MultiVehicleManager* multiVehicleManager     READ    multiVehicleManager     CONSTANT)
+    Q_PROPERTY(QString                  appName                 READ    appName                 CONSTANT)
+    Q_PROPERTY(LinkManager*             linkManager             READ    linkManager             CONSTANT)
+    Q_PROPERTY(MultiVehicleManager*     multiVehicleManager     READ    multiVehicleManager     CONSTANT)
+    Q_PROPERTY(TdxActuatorController*   tdxActuatorController   READ    tdxActuatorController   CONSTANT)
     Q_PROPERTY(QGCMapEngineManager* mapEngineManager        READ    mapEngineManager        CONSTANT)
     Q_PROPERTY(QGCPositionManager*  qgcPositionManger       READ    qgcPositionManger       CONSTANT)
     Q_PROPERTY(VideoManager*        videoManager            READ    videoManager            CONSTANT)
@@ -151,6 +153,7 @@ public:
     QString                 appName             ()  { return qgcApp()->applicationName(); }
     LinkManager*            linkManager         ()  { return _linkManager; }
     MultiVehicleManager*    multiVehicleManager ()  { return _multiVehicleManager; }
+    TdxActuatorController*  tdxActuatorController () { return _tdxActuatorController; }
     QGCMapEngineManager*    mapEngineManager    ()  { return _mapEngineManager; }
     QGCPositionManager*     qgcPositionManger   ()  { return _qgcPositionManager; }
     MissionCommandTree*     missionCommandTree  ()  { return _missionCommandTree; }
@@ -246,6 +249,7 @@ private:
     double                  _flightMapInitialZoom   = 17.0;
     LinkManager*            _linkManager            = nullptr;
     MultiVehicleManager*    _multiVehicleManager    = nullptr;
+    TdxActuatorController*  _tdxActuatorController  = nullptr;
     QGCMapEngineManager*    _mapEngineManager       = nullptr;
     QGCPositionManager*     _qgcPositionManager     = nullptr;
     MissionCommandTree*     _missionCommandTree     = nullptr;

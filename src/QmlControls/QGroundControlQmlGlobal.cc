@@ -68,6 +68,7 @@ void QGroundControlQmlGlobal::setToolbox(QGCToolbox* toolbox)
 
     _linkManager            = toolbox->linkManager();
     _multiVehicleManager    = toolbox->multiVehicleManager();
+    _tdxActuatorController  = toolbox->tdxActuatorController();
     _mapEngineManager       = toolbox->mapEngineManager();
     _qgcPositionManager     = toolbox->qgcPositionManager();
     _missionCommandTree     = toolbox->missionCommandTree();

@@ -16,6 +16,7 @@
 * resources (svg files, for example) that are placed in resources or whever need to be defined in the qgcresources.qrc file.     
 * forums suggest that learing about the UI starts from "MainWindowInner.qml", which I suspect is now "MainRootWindow.qml"
 
+OMG: add new modules to the global `QGroundControl` object in `QGroundControlQmlGlobal.h` ?!?!?!
 ## errors and resolutions
 
 hopefully this will be a good tracker of errors and crap with resolutions. starting this because I couldn't get onto SO on a plane and i'm TWEAKING up here!!

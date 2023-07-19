@@ -90,6 +90,12 @@ Rectangle {
             icon.source:        "/res/engine.svg"
             onClicked:          showCriticalVehicleMessage("bazinga")
         }
+
+        QGCToolBarButton {
+            id:                 transducerActuatorButton
+            icon.source:        "/res/pingdsp.svg"
+            onClicked:          QGroundControl.tdxActuatorController.changeTdxState()
+        }
     }
 
     QGCFlickable {
