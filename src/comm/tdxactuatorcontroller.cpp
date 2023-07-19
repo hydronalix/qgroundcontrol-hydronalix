@@ -10,6 +10,7 @@ TdxActuatorController::TdxActuatorController(QGCApplication* app, QGCToolbox* to
          this, &TdxActuatorController::readPendingDatagrams);
 
     _keyword = "arm";
+    _state = 0;
 }
 
 void TdxActuatorController::readPendingDatagrams()
@@ -22,8 +23,6 @@ void TdxActuatorController::readPendingDatagrams()
 
 void TdxActuatorController::changeTdxState()
 {
-    if (_udpSocket->isWritable())
-    {
     _state ^= 1;
     _jobject[_keyword] = _state;
     QJsonDocument doc(_jobject);
@@ -33,10 +32,4 @@ void TdxActuatorController::changeTdxState()
                 8888
                 );
     qInfo("success was %d", success);
-    }
-
-    else
-    {
-        qInfo("socket not in writeable state");
-    }
 }

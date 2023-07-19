@@ -19,7 +19,7 @@ public:
     Q_INVOKABLE void readPendingDatagrams();
 private:
     QUdpSocket*     _udpSocket;
-    bool            _state;
+    int             _state;
     QString         _keyword;
     QJsonObject     _jobject;
 signals:
