@@ -17,13 +17,61 @@ void TdxActuatorController::readPendingDatagrams()
 {
     while (_udpSocket->hasPendingDatagrams()) {
         QNetworkDatagram datagram = _udpSocket->receiveDatagram();
-        ///todo
+        QJsonObject jobject;
+        QJsonDocument doc = QJsonDocument::fromJson(datagram.data());
+
+        /*
+         * json parsing checks
+         */
+        if (!doc.isNull())
+        {
+            if (doc.isObject())
+            {
+                jobject = doc.object();
+            }
+            else
+            {
+                qInfo("document is not object");
+                return;
+            }
+        }
+        else
+        {
+            qInfo("invalid json");
+            return;
+        }
+
+        /*
+         * re-send desired state if the boat reg value isn't the ground-side state
+         * (useful for dropped packets)
+         */
+        if (jobject.contains("arm"))
+        {
+            if (jobject["arm"] != _state)
+            {
+                _sendState();
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            qInfo("jobject does not contain arm key");
+            return;
+        }
     }
 }
 
 void TdxActuatorController::changeTdxState()
 {
     _state ^= 1;
+    _sendState();
+}
+
+void TdxActuatorController::_sendState()
+{
     _jobject[_keyword] = _state;
     QJsonDocument doc(_jobject);
     int success = _udpSocket->writeDatagram(

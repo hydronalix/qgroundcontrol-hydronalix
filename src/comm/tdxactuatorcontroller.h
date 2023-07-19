@@ -17,11 +17,14 @@ public:
 
     Q_INVOKABLE void changeTdxState();
     Q_INVOKABLE void readPendingDatagrams();
+
 private:
     QUdpSocket*     _udpSocket;
     int             _state;
     QString         _keyword;
     QJsonObject     _jobject;
+    void            _sendState();
+
 signals:
 
 };
