@@ -15,8 +15,9 @@ class TdxActuatorController : public QGCTool
 public:
     TdxActuatorController(QGCApplication* app, QGCToolbox* toolbox);
 
-    Q_INVOKABLE void changeTdxState();
-    Q_INVOKABLE void readPendingDatagrams();
+    Q_INVOKABLE void    changeTdxState();
+    Q_INVOKABLE void    readPendingDatagrams();
+    Q_INVOKABLE int     getState();
 
 private:
     QUdpSocket*     _udpSocket;
@@ -26,7 +27,6 @@ private:
     void            _sendState();
 
 signals:
-
 };
 
 #endif // TDXACTUATORCONTROLLER_H

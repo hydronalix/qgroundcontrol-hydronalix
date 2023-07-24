@@ -81,3 +81,9 @@ void TdxActuatorController::_sendState()
                 );
     qInfo("success was %d", success);
 }
+
+int TdxActuatorController::getState()
+{
+    qInfo("state returned as %d", _state);
+    return _state;
+}

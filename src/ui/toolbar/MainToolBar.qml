@@ -85,17 +85,29 @@ Rectangle {
             visible:            _activeVehicle && _communicationLost && currentToolbar === flyViewToolbar
         }
 
-        QGCToolBarButton {
-            id:                 hybridViewButton
-            icon.source:        "/res/engine.svg"
-            onClicked:          showCriticalVehicleMessage("bazinga")
-        }
+        /* TODO: use this ... */
+//        QGCToolBarButton {
+//            id:                 hybridViewButton
+//            icon.source:        "/res/engine.svg"
+//            onClicked:          showCriticalVehicleMessage("bazinga")
+//        }
 
         QGCToolBarButton {
             id:                 transducerActuatorButton
-            icon.source:        "/res/pingdsp.svg"
-            onClicked:          QGroundControl.tdxActuatorController.changeTdxState()
-        }
+            icon.source:        "/res/LockClosed.svg"
+            onClicked:          {
+                QGroundControl.tdxActuatorController.changeTdxState()
+                updateIconSource()
+            }
+
+            function updateIconSource() { /* TODO: update icons */
+                if (QGroundControl.tdxActuatorController.getState()) {
+                    transducerActuatorButton.icon.source = "/res/LockOpen.svg"
+                } else {
+                    transducerActuatorButton.icon.source = "/res/LockClosed.svg"
+                }
+            }
+        }        
     }
 
     QGCFlickable {
