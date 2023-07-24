@@ -94,7 +94,7 @@ Rectangle {
 
         QGCToolBarButton {
             id:                 transducerActuatorButton
-            icon.source:        "/res/LockClosed.svg"
+            icon.source:        "/res/RaisedV3.svg"
             onClicked:          {
                 QGroundControl.tdxActuatorController.changeTdxState()
                 updateIconSource()
@@ -102,9 +102,9 @@ Rectangle {
 
             function updateIconSource() { /* TODO: update icons */
                 if (QGroundControl.tdxActuatorController.getState()) {
-                    transducerActuatorButton.icon.source = "/res/LockOpen.svg"
+                    transducerActuatorButton.icon.source = "/res/LoweredV3.svg"
                 } else {
-                    transducerActuatorButton.icon.source = "/res/LockClosed.svg"
+                    transducerActuatorButton.icon.source = "/res/RaisedV3.svg"
                 }
             }
         }        

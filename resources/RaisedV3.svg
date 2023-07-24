@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.06 113.66">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: FranklinGothic-Heavy, 'Franklin Gothic Heavy';
+        font-size: 39.51px;
+        font-weight: 800;
+        letter-spacing: .2em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="72.09" y="7.78" width="47.64" height="11.96" rx="2" ry="2"/>
+  <rect class="cls-1" x="26.27" y=".5" width="53.41" height="10.7" rx="3.43" ry="3.43"/>
+  <rect class="cls-1" x=".5" y="20.33" width="190.82" height="45.06" rx="21.68" ry="21.68"/>
+  <path class="cls-1" d="m163.12,20v-4.78c0-2.21-1.81-4.02-4.02-4.02h-1.94c-2.21,0-4.02,1.81-4.02,4.02v4.78"/>
+  <text class="cls-2" transform="translate(6.66 101.54)"><tspan x="0" y="0">RAISED</tspan></text>
+</svg>

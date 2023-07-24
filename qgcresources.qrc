@@ -6,6 +6,8 @@
         <file alias="NanumGothic-Bold">resources/fonts/NanumGothic-Bold.ttf</file>
     </qresource>
     <qresource prefix="/res">
+	<file alias="RaisedV3.svg">resources/RaisedV3.svg</file>
+        <file alias="LoweredV3.svg">resources/LoweredV3.svg</file>
 	<file alias="pingdsp.svg">resources/pingdsp.svg</file>
 	<file alias="speedometer.svg">resources/speedometer.svg</file>
 	<file alias="engine.svg">resources/engine.svg</file>
